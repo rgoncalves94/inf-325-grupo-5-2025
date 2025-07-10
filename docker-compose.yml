@@ -3,7 +3,6 @@ services:
     build: .
     ports:
       - "8888:8888"
-      - "22:22"
     depends_on:
       - mariadb
       - mongodb
