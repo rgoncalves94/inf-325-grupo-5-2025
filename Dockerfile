@@ -1,12 +1,12 @@
 FROM python:3.12-slim
 
-# Instalar dependências do sistema incluindo pkg-config
 USER root
 RUN apt-get update && apt-get install -y \
     pkg-config \
     default-libmysqlclient-dev \
     build-essential \
     mariadb-client 
+
 COPY requirements.txt .
 
 RUN pip3 install -r requirements.txt
