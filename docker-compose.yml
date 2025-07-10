@@ -2,7 +2,8 @@ services:
   jupyter:
     build: .
     ports:
-      - "8888:8888" 
+      - "8888:8888"
+      - "22:22"
     depends_on:
       - mariadb
       - mongodb
@@ -11,6 +12,9 @@ services:
       - net
     volumes:
       - notebooks_volume:/notebooks
+    environment:
+      - IPYTHONDIR=/root/.ipython
+      - PYTHONPATH=/root/.ipython/extensions
   redis:
     image: "redis:8.0.3-alpine"
     networks:

@@ -3,6 +3,11 @@
 
 c = get_config()
 
+# Carregar extensões IPython automaticamente
+c.InteractiveShellApp.extensions = [
+    'redis_command'
+] 
+
 # Configurações do servidor
 c.ServerApp.ip = '0.0.0.0'
 c.ServerApp.port = 8888
