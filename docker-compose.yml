@@ -10,7 +10,7 @@ services:
     networks:
       - net
     volumes:
-      - ./notebooks:/notebooks
+      - notebooks_volume:/notebooks
   redis:
     image: "redis:8.0.3-alpine"
     networks:
@@ -39,3 +39,11 @@ services:
 networks:
   net:
     driver: bridge
+
+volumes:
+  notebooks_volume:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./notebooks
