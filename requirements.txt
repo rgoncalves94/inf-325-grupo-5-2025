@@ -1,0 +1,26 @@
+# jupyter/jupyterlab extensions
+jupyter-server-proxy
+jupyter-vscode-proxy
+jupyterlab
+jupyterlab-rise
+ipywidgets
+jupyter_contrib_nbextensions
+
+# Redis
+redis
+pandas
+sqlalchemy
+ipython-sql
+faker
+
+# MariaDB
+mariadb_kernel
+sqlalchemy
+ipython-sql
+jupyterlab_sql
+mysqlclient
+
+# MongoDB
+pymongo
+imongo-kernel
+pprintpp

@@ -1,0 +1,39 @@
+services:
+  jupyter:
+    build: .
+    ports:
+      - "8888:8888" 
+    depends_on:
+      - mariadb
+      - mongodb
+      - redis
+    networks:
+      - net
+  redis:
+    image: "redis:8.0.3-alpine"
+    networks:
+      - net
+    ports:
+      - "6379:6379"
+  mariadb:
+    image: "mariadb:11.8.2"
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: admin
+    networks:
+      - net
+    ports:
+      - "3306:3306"
+  mongodb:
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    networks:
+      - net
+    ports:
+      - "27017:27017"
+
+networks:
+  net:
+    driver: bridge

@@ -1,0 +1,9 @@
+{
+    "user": "root",
+    "host": "mariadb",
+    "port": "3306",
+    "password": "admin",
+    "start_server": "True",
+    "client_bin": "/usr/bin/mariadb",
+    "server_bin": "/usr/bin/mariadbd"
+}
